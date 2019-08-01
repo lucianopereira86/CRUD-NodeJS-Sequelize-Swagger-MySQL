@@ -1,0 +1,26 @@
+{
+	"development": {
+		"username": "root",
+		"password": "<YOUR-PASSWORD>",
+		"database": "crud",
+		"host": "localhost",
+		"dialect": "mysql",
+		"timezone": "America/Belem"
+	},
+	"test": {
+		"username": "root",
+		"password": "<YOUR-PASSWORD>",
+		"database": "crud",
+		"host": "localhost",
+		"dialect": "mysql",
+		"timezone": "America/Belem"
+	},
+	"production": {
+		"username": "root",
+		"password": "<YOUR-PASSWORD>",
+		"database": "crud",
+		"host": "localhost",
+		"dialect": "mysql",
+		"timezone": "America/Belem"
+	}
+}

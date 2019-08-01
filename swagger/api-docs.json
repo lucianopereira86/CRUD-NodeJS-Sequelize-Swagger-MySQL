@@ -1,0 +1,206 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "1.0.0",
+		"title": "Swagger CRUD",
+		"description": "Swagger CRUD description",
+		"termsOfService": "http://swagger.io/terms/"
+	},
+	"basePath": "/",
+	"tags": [
+		{
+			"name": "Users",
+			"description": "User actions"
+		}
+	],
+	"schemes": ["http", "https"],
+	"consumes": ["application/json"],
+	"produces": ["application/json"],
+	"paths": {
+		"/api/v1/users": {
+			"post": {
+				"tags": ["Users"],
+				"description": "Create user",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"name": "vm",
+						"required": ["profile_id", "name", "is_active"],
+						"in": "body",
+						"properties": {
+							"profile_id": {
+								"$ref": "#/definitions/profile_id"
+							},
+							"name": {
+								"$ref": "#/definitions/name"
+							},
+							"is_active": {
+								"$ref": "#/definitions/is_active"
+							}
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Success"
+					},
+					"400": {
+						"description": "Business Exception",
+						"schema": {
+							"$ref": "#/definitions/business_exception"
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": ["Users"],
+				"description": "Update user",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"name": "vm",
+						"required": ["user_id", "profile_id", "name", "is_active"],
+						"in": "body",
+						"properties": {
+							"user_id": {
+								"$ref": "#/definitions/user_id"
+							},
+							"profile_id": {
+								"$ref": "#/definitions/profile_id"
+							},
+							"name": {
+								"$ref": "#/definitions/name"
+							},
+							"is_active": {
+								"$ref": "#/definitions/is_active"
+							}
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Success"
+					},
+					"400": {
+						"description": "Business Exception",
+						"schema": {
+							"$ref": "#/definitions/business_exception"
+						}
+					}
+				}
+			},
+			"get": {
+				"tags": ["Users"],
+				"description": "List users",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"name": "user_id",
+						"in": "query",
+						"type": "number",
+						"description": "User ID",
+						"example": 1
+					},
+					{
+						"name": "profile_id",
+						"in": "query",
+						"type": "number",
+						"description": "Profile ID (1 = ADMIN, 2 = CLIENT)",
+						"example": 1
+					},
+					{
+						"name": "name",
+						"in": "query",
+						"type": "string",
+						"description": "User name",
+						"example": "LUCIANO"
+					},
+					{
+						"name": "is_active",
+						"in": "query",
+						"type": "boolean",
+						"description": "Is the user active?",
+						"example": true
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Success"
+					},
+					"400": {
+						"description": "Business Exception",
+						"schema": {
+							"$ref": "#/definitions/business_exception"
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": ["Users"],
+				"description": "Delete user",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"name": "user_id",
+						"in": "query",
+						"required": true,
+						"type": "number",
+						"description": "User ID",
+						"example": 1
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Success"
+					},
+					"400": {
+						"description": "Business Exception",
+						"schema": {
+							"$ref": "#/definitions/business_exception"
+						}
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"user_id": {
+			"type": "number",
+			"description": "User ID",
+			"example": 1
+		},
+		"profile_id": {
+			"type": "number",
+			"description": "Profile ID (1 = ADMIN, 2 = CLIENT)",
+			"example": 1
+		},
+		"name": {
+			"type": "string",
+			"description": "User name",
+			"example": "LUCIANO"
+		},
+		"is_active": {
+			"type": "boolean",
+			"description": "Is the user active?",
+			"example": true
+		},
+		"error": {
+			"type": "object",
+			"description": "Error data",
+			"properties": {
+				"msg": {
+					"type": "string",
+					"description": "Error message",
+					"example": "User not found"
+				}
+			}
+		},
+		"business_exception": {
+			"type": "array",
+			"description": "Error array",
+			"items": {
+				"$ref": "#/definitions/error"
+			}
+		}
+	}
+}
