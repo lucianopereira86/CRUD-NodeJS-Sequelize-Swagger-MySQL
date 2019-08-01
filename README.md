@@ -19,7 +19,7 @@ The objective of this guide is to make a [NodeJS Express](https://expressjs.com/
 
 - Run the script located at "/docs/crud.sql" to create the database on MySQL Workbench or on another program of your preference.
 
-- Install the node modules:
+- Install the node modules running the comands below at the root folder:
 
 ```batch
     npm install
