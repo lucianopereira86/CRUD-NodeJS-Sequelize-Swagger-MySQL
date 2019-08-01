@@ -49,7 +49,7 @@ The "server.js" file creates a MySQL pool to allow multiple connections:
 
 ![Alt Text](/docs/node02.JPG)
 
-The "/config/config.json" contains database connections for different environments:
+The "/config/config.json" contains database connections for different environments. They are used by the "/models/index.js" file during the Sequelize initialization:
 
 ![Alt Text](/docs/node03.JPG)
 
