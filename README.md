@@ -13,7 +13,7 @@ Simple CRUD example with NodeJS, Sequelize, Swagger and MySQL
 
 ## Objective
 
-Our objective is to connect a NodeJS web API with a MySQL database by using the [Sequelize ORM](https://sequelize.org/) (Object-relational mapping). The Swagger UI will be used to test the API.
+To connect a NodeJS web API with a MySQL database by using the [Sequelize ORM](https://sequelize.org/) (Object-relational mapping). The Swagger UI will be used to test the API.
 
 ## To run this project
 
