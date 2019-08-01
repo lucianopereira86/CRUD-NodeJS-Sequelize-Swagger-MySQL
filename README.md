@@ -1,25 +1,36 @@
+![Alt Text](/docs/titulo.JPG)
+
 # CRUD-NodeJS-Sequelize-Swagger-MySQL
 
 Simple CRUD example with NodeJS, Sequelize, Swagger and MySQL
 
 ## Technologies:
 
-- NodeJS Express
-- Sequelize
-- Swagger UI
+- NodeJS Express v4.16.4
+- Sequelize v4.38.0
+- Swagger UI v3.20.1
 - MySQL
 
 ## To run this project
 
 - Install packages:
-  `npm install`
+
+```batch
+    npm install
+```
+
 - Run API:
-  `npm run dev`
+
+```batch
+    npm run dev
+```
+
 - Acess URL:
-  `http://localhost:3000`
-  
-## Behind the code
 
-
+```batch
+    http://localhost:3000
+```
 
 ![Alt Text](/docs/swagger.JPG)
+
+## How it works
